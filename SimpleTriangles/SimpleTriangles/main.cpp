@@ -59,10 +59,10 @@ void Render() {
     
     program.SetModelMatrix(modelMatrix);
     
-    float vertices[] = {3.5f, -3.5f, 0.0f, 3.5f, -3.5f, -3.5f };
+    float vertices[] = {-4.8f, -1.0f, -4.8f, -3.6f, 4.8f, -3.6f, 4.8f, -1.0f };
     glVertexAttribPointer(program.positionAttribute, 2, GL_FLOAT, false, 0, vertices);
     glEnableVertexAttribArray(program.positionAttribute);
-    glDrawArrays(GL_TRIANGLES, 0, 3);
+    glDrawArrays(GL_QUADS, 0, 4);
     glDisableVertexAttribArray(program.positionAttribute);
     
     SDL_GL_SwapWindow(displayWindow);
