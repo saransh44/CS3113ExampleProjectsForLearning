@@ -36,7 +36,7 @@ void Initialize() {
     
     program.SetProjectionMatrix(projectionMatrix);
     program.SetViewMatrix(viewMatrix);
-    program.SetColor(1.0f, 1.0f, 0.0f, 1.0f);
+    program.SetColor(0.0f, 0.0f, 1.0f, 1.0f);
     
     glUseProgram(program.programID);
     
@@ -59,10 +59,10 @@ void Render() {
     
     program.SetModelMatrix(modelMatrix);
     
-    float vertices[] = {-4.8f, -1.0f, -4.8f, -3.6f, 4.8f, -3.6f, 4.8f, -1.0f };
+    float vertices[] = {-0.5f, -0.5f, 0.0f, 0.5f, 0.5f, -0.5f, -0.5f, 1.5f, 0.0f, 2.5f, 0.5f, 1.5f};
     glVertexAttribPointer(program.positionAttribute, 2, GL_FLOAT, false, 0, vertices);
     glEnableVertexAttribArray(program.positionAttribute);
-    glDrawArrays(GL_QUADS, 0, 4);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
     glDisableVertexAttribArray(program.positionAttribute);
     
     SDL_GL_SwapWindow(displayWindow);
